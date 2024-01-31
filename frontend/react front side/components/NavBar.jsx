@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./NavBar.css"
 const NavBar = () => {
-  return <div className='navbar'>
+  return <div className='navbar overflow-auto'>
 
     <nav className="navigation">
       <div className='upperLink'>
@@ -54,11 +54,11 @@ const NavBar = () => {
       </div>
 
 
-      <div className="upperLink">
+      <div className="upperLink hidden lg:block">
 
       <Link to={'#profile'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/profile.png" /> <div className='heading1'>Profile</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/grok.png" /> <div className='heading1'>Grok</div>
       </div>
       </Link>
       </div>
@@ -68,10 +68,19 @@ const NavBar = () => {
 
       <Link to={'#profile'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/profile.png" /> <div className='heading1'>Profile</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/list.png" /> <div className='heading1'>Lists</div>
       </div>
       </Link>
       </div>
+
+
+        <div className="upperLink hidden xl:block ">
+          <Link to={'#profile'}>
+            <div className='linkItem'>
+              <img height={32} width={32} style={{marginRight:"4px"}} src="../images/x.png" /> <div className='heading1'>Premium</div>
+            </div>
+          </Link>
+        </div>
 
       <div className="upperLink">
 
@@ -90,6 +99,14 @@ const NavBar = () => {
         <img height={32} width={32} style={{marginRight:"4px"}} src="../images/more.png" /> <div className='heading1'>More</div>
       </div>
       </Link>
+      </div>
+
+      <div className=''>
+      <Link to={'#tweet'}>
+        <div className='post '>
+          <button>Post</button>
+        </div>
+      </Link> 
       </div>
     </nav>
   </div>
