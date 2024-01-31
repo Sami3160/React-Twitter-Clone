@@ -1,0 +1,39 @@
+.navbar{
+    height: 100vh;
+    width: fit-content;
+    margin: auto;
+    /* margin-right: 50%; */
+    /* width: 23%; */
+}
+
+.linkItem{
+    display: flex;
+    justify-content:flex-start  ;
+}
+.navigation{
+    margin-left:calc(100% - 100%);
+}
+.upperLink{
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 40px;
+    /* margin: auto; */
+    transition: 0.3s background-color;
+    width:fit-content;
+}
+.upperLink:hover{
+    background-color: #141414;
+}
+.heading1{
+    padding: 4px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .heading1{
+        opacity: 0;
+        display: none;
+    }
+  }
