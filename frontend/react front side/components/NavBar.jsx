@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className='upperLink'>
       <Link to={'#home'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/home.png" /> <div className='heading1' style={{fontWeight:"bold"}}>Home</div>
+        <img height={32} width={32}  src="../images/home.png" /> <div className='heading1 mx-2' style={{fontWeight:"bold"}}>Home</div>
       </div>
       </Link>
       </div>
@@ -28,7 +28,7 @@ const NavBar = () => {
 
       <Link to={'#explore'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/explore.png" /> <div className='heading1'>Explore</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/explore.png" /> <div className='heading1 mx-2'>Explore</div>
       </div>
       </Link>
       </div>
@@ -38,7 +38,7 @@ const NavBar = () => {
 
       <Link to={'#notification'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/notification.png" /> <div className='heading1'>Notification</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/notification.png" /> <div className='heading1 mx-2'>Notification</div>
       </div>
       </Link>
       </div>
@@ -48,7 +48,7 @@ const NavBar = () => {
 
       <Link to={'#message'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/message.png" /> <div className='heading1'>Message</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/message.png" /> <div className='heading1 mx-2'>Message</div>
       </div>
       </Link>
       </div>
@@ -58,7 +58,7 @@ const NavBar = () => {
 
       <Link to={'#profile'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/grok.png" /> <div className='heading1'>Grok</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/grok.png" /> <div className='heading1 mx-2'>Grok</div>
       </div>
       </Link>
       </div>
@@ -68,7 +68,7 @@ const NavBar = () => {
 
       <Link to={'#profile'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/list.png" /> <div className='heading1'>Lists</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/list.png" /> <div className='heading1 mx-2'>Lists</div>
       </div>
       </Link>
       </div>
@@ -77,7 +77,7 @@ const NavBar = () => {
         <div className="upperLink hidden xl:block ">
           <Link to={'#profile'}>
             <div className='linkItem'>
-              <img height={32} width={32} style={{marginRight:"4px"}} src="../images/x.png" /> <div className='heading1'>Premium</div>
+              <img height={32} width={32} style={{marginRight:"4px"}} src="../images/x.png" /> <div className='heading1 mx-2'>Premium</div>
             </div>
           </Link>
         </div>
@@ -86,7 +86,7 @@ const NavBar = () => {
 
       <Link to={'#profile'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/profile.png" /> <div className='heading1'>Profile</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/profile.png" /> <div className='heading1 mx-2'>Profile</div>
       </div>
       </Link>
       </div>
@@ -96,7 +96,7 @@ const NavBar = () => {
 
       <Link to={'#more'}>
       <div className='linkItem'>
-        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/more.png" /> <div className='heading1'>More</div>
+        <img height={32} width={32} style={{marginRight:"4px"}} src="../images/more.png" /> <div className='heading1 mx-2'>More</div>
       </div>
       </Link>
       </div>
