@@ -49,7 +49,14 @@ export default function TopMenu() {
 
         {/* setting */}
         <div className='col-span-1 flex flex-col items-center'>
-            <div className='w-auto inline-block m-2 p-2 rounded-full transition delay-[0.1s] hover:bg-[#141414]'>
+            <div className='w-auto inline-block m-2 p-2 rounded-full 
+            
+            
+            
+            
+            
+            
+            '>
                 <Link to={"#settings"}>
                     <img src="../images/setting.png" width={20} height={20} alt="settings image icon"/>
                 </Link>

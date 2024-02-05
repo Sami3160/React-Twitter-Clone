@@ -15,6 +15,9 @@ const TweetsSchema=new mongoose.Schema({
         type:String,
         max:200
     },
+    images: [{
+        type: String
+    }],
     likes:{
         type: Number,
         required: true

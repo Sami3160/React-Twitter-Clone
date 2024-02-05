@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
 import Signup from "../pages/Signup"
+import Logout from "../pages/Logout"
 import './App.css'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -44,6 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/logout" element={<Logout/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>
