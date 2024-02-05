@@ -44,9 +44,9 @@ function Logout() {
                         <div className="login mt-8 mb-4">
 
                             <h3 className="text-bold">Already have an account?</h3>
-                            <Link>
+                            <Link to={"/signup"}>
                                 <div className="signin w-[100%] sm:w-[60%] bg-black rounded-full inline-block my-3 text-center p-2  border-[2px] border-[#2e2d2d] transition delay-[0.1s] hover:bg-[#141414]">
-                                    Signin
+                                    Signup
                                 </div>
                             </Link>
                         </div>
