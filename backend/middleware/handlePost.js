@@ -1,6 +1,6 @@
 const cloudinary= require("../utils/cloudinary")
 const Tweets =require("../models/tweets.modals")
-
+const { v4: uuidv4 } = require('uuid');
 
 const createProduct= async (req, res, next)=>{
     if(req.images===undefined && req.content!=="")next()
@@ -37,5 +37,6 @@ const createProduct= async (req, res, next)=>{
 }
 
 
-export default createProduct;
+
+module.exports = createProduct;
 

@@ -1,4 +1,4 @@
-import mongoose, { Schema, mongo } from "mongoose";
+const mongoose=require("mongoose")
 
 const TweetsSchema=new mongoose.Schema({
     tweetId:{
@@ -35,4 +35,5 @@ const TweetsSchema=new mongoose.Schema({
     }]
 },{timestamps:true})
 
-export const Tweets=mongoose.model("Tweets",TweetsSchema)
+const Tweets=mongoose.model("Tweets",TweetsSchema)
+module.exports={Tweets}

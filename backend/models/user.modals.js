@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose=require("mongoose")
 
 const UserSchema=new mongoose.Schema({
     userId:{
@@ -36,5 +36,5 @@ const UserSchema=new mongoose.Schema({
         ref:"User"
     }]
 })
-
-export const User=mongoose.model("User",UserSchema);
+const User=mongoose.model("User",UserSchema);
+module.exports={User}
