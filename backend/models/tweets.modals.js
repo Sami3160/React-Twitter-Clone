@@ -13,14 +13,21 @@ const TweetsSchema=new mongoose.Schema({
     },
     content: {
         type:String,
+        default:"",
         max:200
     },
-    images: [{
-        type: String
-    }],
+    images: {
+        public_id:{
+            type: String,
+            default:""
+        },url:{
+            type:String,
+            default:""
+        }
+    },
     likes:{
         type: Number,
-        required: true
+        default:0
     },
     retweets:[{
         type:mongoose.Schema.Types.ObjectId,

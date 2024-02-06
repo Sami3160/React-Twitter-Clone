@@ -6,6 +6,7 @@ const app=express();
 import {loginCheck , authCheck} from "./middleware/user_verify"
 import { User } from "./data modals/user.modals";
 import mongoose from "mongoose";
+require('dotenv').config();
 
 
 mongoose.connect("mongodb+srv://admin:root@cluster0.od8zpg8.mongodb.net/")
