@@ -8,8 +8,11 @@ const {User}=require("./models/user.modals")
 const {loginCheck , authCheck} = require("./middleware/user_verify")
 const mongoose = require('mongoose');
 const redundantCheck=require("./middleware/duplicateRecords")
+const cloudinary = require("./utils/cloudinary");
+const handlePost=require("./middleware/handlePost")
 require('dotenv').config();
-
+const multer = require('multer');
+const upload = multer();
 
 mongoose.connect(process.env.MONGOOSE_URL)
 .then(()=>{
@@ -49,6 +52,23 @@ app.post("/signup",redundantCheck,async (req,res)=>{
     const email=req.body.email
     const username=req.body.username
     const password=req.body.password
+    const defaultPic="https://res.cloudinary.com/drixlrait/image/upload/v1707233709/xy9ijczoaxw07i0ctwti.jpg"
+    const profilePic=req.body.profilePic;
+    
+    try {
+        if(profilePic){
+            const result=await cloudinary.uploader.upload(profilePic,{
+                folder:"profile"
+            })
+        }else{
+            const result=await cloudinary.uploader.upload(defaultPic,{
+                folder:"profile"
+            })
+        }
+    } catch (error) {
+            console.log("error in cloudinary",error)
+    }
+
     try {
     const user= await User.create({
         userId:uuidv4(),
@@ -58,7 +78,7 @@ app.post("/signup",redundantCheck,async (req,res)=>{
         bio:""
     })
     const userData=await User.findOne({email})
-    const token=jwt.sign({email},process.env.JWT_SECRET, { expiresIn: '6h' })
+    const token=jwt.sign({email},process.env.JWT_SECRET, { expiresIn: '24h' })
     res.cookie('token',token, {httpOnly:true, secure:true})
     res.status(200).json({data:userData, token:token})
         
@@ -73,6 +93,29 @@ app.post("/signup",redundantCheck,async (req,res)=>{
         }
     }
     
+})
+
+app.post("/upload", upload.single('file'), async (req, res) => {
+    try {
+        const result = await cloudinary.uploader.upload(req.file.path)
+        res.status(200).json({result})
+    } catch (error) {
+        console.log("error in cloudinary",error)
+    }
+}
+)
+
+app.post("/logout", (req,res)=>{
+    res.clearCookie('token')
+    res.status(200).json({msg:"cookie cleared"})
+})
+
+app.post("/posts", handlePost,async (req,res)=>{
+    const {content, images, userId, tweetId}=req.body;
+    const result=await Tweets.findOne({tweetId})
+    if(result){
+        res.send(200).json({result})
+    }
 })
 
 app.listen(5000,()=>{

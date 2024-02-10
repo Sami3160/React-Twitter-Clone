@@ -7,6 +7,10 @@ const UserSchema=new mongoose.Schema({
         unique:true,
         lowercase:true
     },
+    profilePic:{
+        type:String
+    }
+    ,
     username:{
         type :String,
         required: true,

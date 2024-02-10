@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { useRef } from "react";
 import { Link } from 'react-router-dom';
 import "./Content.css"
+import { v4 as uuidv4 } from 'uuid';
 import img1 from  "../images/pfp.jpg"
 function Content(){
     const [postActive, setPostActive]=useState(false);
@@ -10,6 +11,7 @@ function Content(){
     const postArea=useRef(null);
     const imageShow=useRef(null);
     const [image,setImage]=useState(null)
+    const [yourPosts, setYourPosts]=useState([]);
     function handleFileChange(e){
         setImage(e.target.files[0]);
         setContent(postArea.current.value)
@@ -37,10 +39,11 @@ function Content(){
         if(content=="" && image==null)return;
         const userId="";
         const data = new FormData();
-        data.append('image', image);
+        if(image)data.append('images', image);
         data.append('userId', userId);
-        data.append('content',content);
-        if(image==null)data.delete('image');
+        data.append('content', content);
+        data.append('tweetId', uuidv4());
+        if (image == null) data.delete('image');
 
         fetch('http://localhost:3000/', {
             method: 'POST',
@@ -49,6 +52,13 @@ function Content(){
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
+                if(result.status==200){
+                    postArea.current.value="";
+                    imageShow.current.src="";
+                    postButton.current.style.backgroundColor="#0e4d78";
+                    postButton.current.style.cursor="default";
+                }
+                setYourPosts(prev=>[...prev,result.data])
             })
             .catch((error) => {
                 console.error(error);
