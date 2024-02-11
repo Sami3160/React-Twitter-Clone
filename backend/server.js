@@ -39,9 +39,9 @@ app.post("/login", loginCheck ,async (req,res)=>{
     res.json({data:userData, token:token})
 })
 app.post("/", authCheck ,async(req,res)=>{
-        const email=req.user.email
+        const email=jwt.decode(req.cookies.token, process.env.JWT_SECRET).email
         try {
-            const userData=await User.findOne({email});
+            const userData=await User.findOne({email},{email:1, username:1, _id:0});
             res.status(200).json({data:userData})
         } catch (error) {
             res.status(500).json({msg:"server error [/]"})

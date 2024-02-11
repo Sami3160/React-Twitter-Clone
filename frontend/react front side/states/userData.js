@@ -1,13 +1,31 @@
 import {atom, selector} from 'recoil';
-const userData = selector({
-    key: 'userData',
+const user=atom({
+    key:'user',
+    default:{
+        email:'',
+        username:''
+    }
+})
+export const userInfo = selector({
+    key: 'userInfo',
     get: async({get})=>{
-        const result=await fetch('http://localhost:5000/userData');
+        const email=get(email);
+        const result=await fetch('http://localhost:5000/userData',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                "Accept":"application/json"
+        }
+        ,
+        body:JSON.stringify({
+          email:email
+        })
+        });
         return result.json();
     }
 });
 
-const posts=selector({
+export const posts=selector({
     key:'posts',
     get: async({get})=>{
         const result=await fetch('http://localhost:5000/posts');
@@ -15,4 +33,4 @@ const posts=selector({
     }
 })
 
-export default userData;
+export default user;

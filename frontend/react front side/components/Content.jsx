@@ -102,24 +102,24 @@ function Content(){
                                 
                             <div className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] " >
                             <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
-                              <img width={20} height={20} src="../images/gallery.svg" alt="" srcset="" />
+                              <img width={20} height={20} src="../images/gallery.svg" alt="" srcSet="" />
                             </label>
                             <input type="file" id="fileInput" onChange={handleFileChange} accept="image/*" style={{display:"none"}}/>
                             </div>
                             <Link className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] ">
-                                <img width={20} height={20} src="../images/gif.svg" alt="" srcset="" />
+                                <img width={20} height={20} src="../images/gif.svg" alt="" srcSet="" />
                             </Link>
                             <Link className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] ">
-                                <img width={20} height={20} src="../images/list.svg" alt="" srcset="" />
+                                <img width={20} height={20} src="../images/list.svg" alt="" srcSet="" />
                             </Link>
                             <Link className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] ">
-                                <img width={20} height={20} src="../images/emoji.svg" alt="" srcset="" />
+                                <img width={20} height={20} src="../images/emoji.svg" alt="" srcSet="" />
                             </Link>
                             <Link className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] ">
-                                <img  width={20} height={20} src="../images/time.svg" alt="" srcset="" />
+                                <img  width={20} height={20} src="../images/time.svg" alt="" srcSet="" />
                             </Link>
                             <Link className="p-2  w-auto inline-block rounded-full mb-2 transition-all ease-in-out delay-[0.1s] hover:bg-[#031018] ">
-                                <img  width={20} height={20} src="../images/location.svg" alt="" srcset="" />
+                                <img  width={20} height={20} src="../images/location.svg" alt="" srcSet="" />
                             </Link>
                         </div>
                         <div className="postButton col-span-1 flex items-start">

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom"
 const Login=()=>{
-
+//signin or login
     return <div>
         <form className="">
             <span></span>
