@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "./Signup.css"
 function Logout() {
+
+    useEffect(()=>{
+        document.title="X. It's what happening / X"
+    })
     return <div className="bg-black ">
         <div className="frontPage flex flex-col sm:flex sm:flex-row sm:items-start">
             <div className="logo h-20 w-20 p-5 sm:h-[100vh] sm:w-auto flex justify-center items-center sm:p-0">
