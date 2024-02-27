@@ -57,7 +57,7 @@ function Logout() {
             </div>
 
         </div>
-        <div className="description flex flex-wrap space-y-2 space-x-4 sm:w-[90%] sm:mx-auto text-[#616d76] text-[12px] sm:my-3">
+        <div className="description flex flex-wrap space-y-2 space-x-4 sm:w-[90%] sm:mx-auto text-[#616d76] text-[12px] sm:mt-3 ">
                             <Link></Link>
                             <Link>About</Link>
                             <Link>Download the X app</Link>
