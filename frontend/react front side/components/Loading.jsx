@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function Loading(){
-    
+    const [online,setOnline]=useState(true)
     
     return <div className="loading bg-black flex justify-center items-center h-[100vh]">
     <div className="text-white">
