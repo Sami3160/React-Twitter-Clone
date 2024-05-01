@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import "./Signup.css"
+
 function Logout() {
 
-    useEffect(()=>{
-        document.title="X. It's what happening / X"
-    })
+
+
+    useEffect(() => {
+        document.title = "X. It's what happening / X"
+    }, [])
     return <div className="bg-black ">
+        <Outlet />
         <div className="frontPage flex flex-col sm:flex sm:flex-row sm:items-start">
             <div className="logo h-20 w-20 p-5 sm:h-[100vh] sm:w-auto flex justify-center items-center sm:p-0">
                 <img src="../images/bigX.svg" alt="X logo" className="w-20 h-20 sm:w-[630px] sm:h-[340px]" />
@@ -48,13 +52,13 @@ function Logout() {
                         <div className="login mt-8 mb-4">
 
                             <h3 className="text-bold">Already have an account?</h3>
-                            <Link to={"/signup"}>
+                            <Link to={"/logout/signup"}>
                                 <div className="signin w-[100%] sm:w-[60%] bg-black rounded-full inline-block my-3 text-center p-2  border-[2px] border-[#2e2d2d] transition delay-[0.1s] hover:bg-[#141414]">
                                     Signup
                                 </div>
                             </Link>
                         </div>
-    
+
                     </div>
 
                 </div>
@@ -62,27 +66,27 @@ function Logout() {
 
         </div>
         <div className="description flex flex-wrap space-y-2 space-x-4 sm:w-[90%] sm:mx-auto text-[#616d76] text-[12px] sm:mt-3 ">
-                            <Link></Link>
-                            <Link>About</Link>
-                            <Link>Download the X app</Link>
-                            <Link>Help Center</Link>
-                            <Link>Terms of Service</Link>
-                            <Link>Privacy Policy</Link>
-                            <Link>Cookie Policy</Link>
-                            <Link>Accessibility</Link>
-                            <Link>Ads info</Link>
-                            <Link>Blog</Link>
-                            <Link>Status</Link>
-                            <Link>Careers</Link>
-                            <Link>Brand Resources</Link>
-                            <Link>Advertising</Link>
-                            <Link>Marketing</Link>
-                            <Link>X for Business</Link>
-                            <Link>Developers</Link>
-                            <Link>Directory</Link>
-                            <Link>Settings</Link>
-                            <Link>© 2024 X Corp.</Link>
-                        </div>
+            <Link></Link>
+            <Link>About</Link>
+            <Link>Download the X app</Link>
+            <Link>Help Center</Link>
+            <Link>Terms of Service</Link>
+            <Link>Privacy Policy</Link>
+            <Link>Cookie Policy</Link>
+            <Link>Accessibility</Link>
+            <Link>Ads info</Link>
+            <Link>Blog</Link>
+            <Link>Status</Link>
+            <Link>Careers</Link>
+            <Link>Brand Resources</Link>
+            <Link>Advertising</Link>
+            <Link>Marketing</Link>
+            <Link>X for Business</Link>
+            <Link>Developers</Link>
+            <Link>Directory</Link>
+            <Link>Settings</Link>
+            <Link>© 2024 X Corp.</Link>
+        </div>
     </div>
 }
 

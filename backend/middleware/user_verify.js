@@ -14,6 +14,8 @@ function verifyToken(token){
         if(status)return {success:true}
         return {success:false}
     } catch (error) {
+        console.log("serious error", error.message)
+        console.log(process.env.JWT_SECRET)
         return {success: false}
     }
 }
@@ -33,7 +35,7 @@ function authCheck(req, res, next){
         req.user=jwt.decode(oldToken, process.env.JWT_SECRET)
         next()
     }else{
-        return res.status(401).json({msg:"session is over"})
+        return res.status(401).json({msg:"session is over"+result.success})
     }
 }
 

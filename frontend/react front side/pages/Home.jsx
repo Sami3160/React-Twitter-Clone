@@ -15,6 +15,11 @@ function Home() {
   const [data, setData] = useState();
   const [online, setOnline] = useState(true);
   const [loaded, setLoaded] = useState(false)
+  const tempUser={
+    email:"jaimk@example.com",
+    username:"mk_username"
+  
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,6 +32,7 @@ function Home() {
               'Content-Type': 'application/json',
               "Accept": "application/json"
             }
+            ,body: JSON.stringify(tempUser)
           })
         // .then((result)=>res=result)
 

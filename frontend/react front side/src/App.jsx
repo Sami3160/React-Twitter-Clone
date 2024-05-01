@@ -4,7 +4,7 @@ import { useSetRecoilState } from "recoil"
 import { Suspense } from "react"
 import user from "../states/userData"
 import './App.css'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, useNavigate } from 'react-router-dom'
 const Home = React.lazy(() => import("../pages/Home"))
 const Login = React.lazy(() => import("../pages/Login"))
 const Signup = React.lazy(() => import("../pages/Signup"))
@@ -18,36 +18,30 @@ function App() {
     setComponentLoaded(true)
   })
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <div>Error....   :(</div>
+    }, {
+      path: "/logout",
+      element: <Logout />,
+      children: [{
+        path: "/logout/login",
+        element: <Login />
+      }, {
+        path: "/logout/signup",
+        element: <Signup />
+      }
+
+      ]
+    }
+  ])
   return (
+    <Suspense fallback={<Loading/>}>
 
-    <BrowserRouter>
-      {componentLoaded && (
-        <Routes>
-          <Route path="/" element={
-            <Suspense fallback={<Loading />}>
-              <Home />
-            </Suspense>
-          } />
-          <Route path="/signup" element={
-            <Suspense fallback={<Loading />}>
-              <Signup />
-            </Suspense>
-          } />
-          <Route path="/logout" element={
-            <Suspense fallback={<Loading />}>
-              <Logout />
-            </Suspense>
-          } />
-          <Route path="/login" element=
-            {
-              <Suspense fallback={<Loading />}>
-                <Login />
-              </Suspense>
-            } />
-        </Routes>
-      )}
-
-    </BrowserRouter>
+      <RouterProvider router={router} />
+    </Suspense>
   )
 }
 
